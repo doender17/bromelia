@@ -794,3 +794,97 @@ class FlowInformationAVP(DiameterAVP, GroupedType):
                              FlowInformationAVP.vendor_id)
         DiameterAVP.set_vendor_id_bit(self, True)
         GroupedType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)
+
+class UsageMonitoringKeyAVP(DiameterAVP, OctetStringType):
+    """Implementation of Usage-Monitoring-Key AVP in Section 5.3.59 of
+        ETSI TS 129 212 V17.2.0 (2022-05).
+
+        The Usage-Monitoring-Key AVP (AVP Code 1066) is of type OctetString.
+        """
+    code = USAGE_MONITORING_KEY_AVP_CODE
+    vendor_id = VENDOR_ID_3GPP
+
+    def __init__(self, data):
+        DiameterAVP.__init__(self,
+                     UsageMonitoringKeyAVP.code,
+                     UsageMonitoringKeyAVP.vendor_id)
+        DiameterAVP.set_vendor_id_bit(self, True)
+        OctetStringType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)
+
+class UsageMonitoringLevelAVP(DiameterAVP, EnumeratedType):
+    """Implementation of Usage-Monitoring-Level AVP in Section 5.3.61 of
+        ETSI TS 129 212 V17.2.0 (2022-05).
+
+        The Usage-Monitoring-Level AVP (AVP Code 1068) is of type Enumerated.
+        """
+    code = USAGE_MONITORING_LEVEL_AVP_CODE
+    vendor_id = VENDOR_ID_3GPP
+
+    values = [
+        SESSION_LEVEL,
+        PCC_RULE_LEVEL,
+        ADC_RULE_LEVEL
+    ]
+
+    def __init__(self, data):
+        DiameterAVP.__init__(self,
+                     UsageMonitoringLevelAVP.code,
+                     UsageMonitoringLevelAVP.vendor_id)
+        DiameterAVP.set_vendor_id_bit(self, True)
+        EnumeratedType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)
+
+class UsageMonitoringReportAVP(DiameterAVP, EnumeratedType):
+    """Implementation of Usage-Monitoring-Report AVP in Section 5.3.62 of
+        ETSI TS 129 212 V17.2.0 (2022-05).
+
+        The Usage-Monitoring-Report AVP (AVP Code 1069) is of type Enumerated.
+        """
+    code = USAGE_MONITORING_LEVEL_AVP_CODE
+    vendor_id = VENDOR_ID_3GPP
+
+    values = [
+        USAGE_MONITORING_REPORT_REQUIRED
+    ]
+
+    def __init__(self, data):
+        DiameterAVP.__init__(self,
+                     UsageMonitoringReportAVP.code,
+                     UsageMonitoringReportAVP.vendor_id)
+        DiameterAVP.set_vendor_id_bit(self, True)
+        EnumeratedType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)
+
+class UsageMonitoringSupportAVP(DiameterAVP, EnumeratedType):
+    """Implementation of Usage-Monitoring-Report AVP in Section 5.3.63 of
+        ETSI TS 129 212 V17.2.0 (2022-05).
+
+        The Usage-Monitoring-Support AVP (AVP Code 1063) is of type Enumerated.
+        """
+    code = USAGE_MONITORING_LEVEL_AVP_CODE
+    vendor_id = VENDOR_ID_3GPP
+
+    values = [
+        USAGE_MONITORING_DISABLED
+    ]
+
+    def __init__(self, data):
+        DiameterAVP.__init__(self,
+                     UsageMonitoringSupportAVP.code,
+                     UsageMonitoringSupportAVP.vendor_id)
+        DiameterAVP.set_vendor_id_bit(self, True)
+        EnumeratedType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)
+
+class UsageMonitoringInformationAVP(DiameterAVP, GroupedType):
+    """Implementation of Usage-Monitoring-Information AVP in Section 5.3.60 of
+    ETSI TS 129 212 V17.2.0 (2022-05).
+
+    The Usage-Monitoring-Information AVP (AVP Code 1067) is of type Grouped.
+    """
+    code = USAGE_MONITORING_INFORMATION_AVP_CODE
+    vendor_id = VENDOR_ID_3GPP
+
+    def __init__(self, data):
+        DiameterAVP.__init__(self,
+                             UsageMonitoringInformationAVP.code,
+                             UsageMonitoringInformationAVP.vendor_id)
+        DiameterAVP.set_vendor_id_bit(self, True)
+        GroupedType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)

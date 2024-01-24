@@ -30,6 +30,8 @@ NON_3GPP_USER_DATA_AVP_CODE = convert_to_4_bytes(1500)
 NON_3GPP_IP_ACCESS_AVP_CODE = convert_to_4_bytes(1501)
 NON_3GPP_IP_ACCESS_APN_AVP_CODE = convert_to_4_bytes(1502)
 AN_TRUSTED_AVP_CODE = convert_to_4_bytes(1503)
+ORIGINATION_TIME_STAMP_AVP_CODE = convert_to_4_bytes(1536)
+MAXIMUM_WAIT_TIME_AVP_CODE = convert_to_4_bytes(1537)
 
 #: List of AN-Trusted AVP values.
 #: For more information, please refer to Section 5.2.3.9 of 

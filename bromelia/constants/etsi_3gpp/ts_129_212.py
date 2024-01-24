@@ -50,6 +50,11 @@ FLOW_INFORMATION_AVP_CODE = convert_to_4_bytes(1058)
 CHARGING_CORRELATION_INDICATOR_AVP_CODE = convert_to_4_bytes(1073)
 FLOW_DIRECTION_AVP_CODE = convert_to_4_bytes(1080)
 UE_LOCAL_IP_ADDRESS_AVP_CODE = convert_to_4_bytes(2805)
+USAGE_MONITORING_KEY_AVP_CODE = convert_to_4_bytes(1066)
+USAGE_MONITORING_INFORMATION_AVP_CODE = convert_to_4_bytes(1067)
+USAGE_MONITORING_LEVEL_AVP_CODE = convert_to_4_bytes(1068)
+USAGE_MONITORING_REPORT_AVP_CODE = convert_to_4_bytes(1069)
+USAGE_MONITORING_SUPPORT_AVP_CODE = convert_to_4_bytes(1070)
 
 #: List of Bearer-Usage AVP values.
 #: For more information, please refer to Section 5.3.1 of 
@@ -264,3 +269,10 @@ FLOW_DIRECTION_BIDIRECTIONAL = convert_to_4_bytes(3)
 BEARER_CONTROL_MODE_UE_ONLY = convert_to_4_bytes(0)
 BEARER_CONTROL_MODE_RESERVED = convert_to_4_bytes(1)
 BEARER_CONTROL_MODE_UE_NW = convert_to_4_bytes(2)
+
+SESSION_LEVEL = convert_to_4_bytes(0)
+PCC_RULE_LEVEL = convert_to_4_bytes(1)
+ADC_RULE_LEVEL = convert_to_4_bytes(2)
+
+USAGE_MONITORING_REPORT_REQUIRED = convert_to_4_bytes(0)
+USAGE_MONITORING_DISABLED = convert_to_4_bytes(0)
