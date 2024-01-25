@@ -42,6 +42,7 @@ from ...avps.etsi_3gpp.ts_129_212 import UsageMonitoringInformationAVP
 from ...avps.etsi_3gpp.ts_129_212 import UsageMonitoringLevelAVP
 from ...avps.etsi_3gpp.ts_129_212 import UsageMonitoringReportAVP
 from ...avps.etsi_3gpp.ts_129_212 import UsageMonitoringSupportAVP
+from ...avps.etsi_3gpp.ts_129_212 import RevalidationTimeAVP
 
 from ...avps.ietf.rfc4006 import SubscriptionIdAVP
 

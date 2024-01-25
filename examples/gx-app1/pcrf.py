@@ -45,10 +45,28 @@ def ccr(request):
 
     attrs = {
         "result_code" : DIAMETER_SUCCESS,
-        "usage_monitoring_information": [usage_monitoring_key, usage_monitoring_level, granted_service_units]
-    }
+        "usage_monitoring_information": [usage_monitoring_key, usage_monitoring_level, granted_service_units],
+        "default_eps_bearer_qos" : [QosClassIdentifierAVP(QCI_9),
+                                    AllocationRetentionPriorityAVP([
+                                        PriorityLevelAVP(1),
+                                        PreEmptionCapabilityAVP(PRE_EMPTION_CAPABILITY_DISABLED),
+                                        PreEmptionVulnerabilityAVP(PRE_EMPTION_VULNERABILITY_ENABLED)]
+                                    )],
+        "qos_information" : [ApnAggregateMaxBitrateUlAVP(32000000), ApnAggregateMaxBitrateDlAVP(50000000)],
+        "revalidation_time" : datetime.datetime.utcnow() + datetime.timedelta(minutes=30),
+        "bearer_usage" : BEARER_USAGE_GENERAL,
+        "bearer_control_mode" : BEARER_CONTROL_MODE_UE_NW,
 
-    return CCA(**attrs)
+    }
+    cca = CCA(**attrs)
+    cca.append(EventTriggerAVP(EVENT_TRIGGER_QOS_CHANGE))
+    cca.append(EventTriggerAVP(EVENT_TRIGGER_RAT_CHANGE))
+    cca.append(EventTriggerAVP(EVENT_TRIGGER_REVALIDATION_TIMEOUT))
+    cca.append(EventTriggerAVP(EVENT_TRIGGER_USAGE_REPORT))
+    cca.append(SupportedFeaturesAVP([ VendorIdAVP(VENDOR_ID_3GPP), FeatureListIdAVP(1), FeatureListAVP(8)]))
+    cca.append(SupportedFeaturesAVP([ VendorIdAVP(VENDOR_ID_3GPP), FeatureListIdAVP(1), FeatureListAVP(0)]))
+
+    return cca
 
 
 if __name__ == "__main__":

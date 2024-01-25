@@ -62,7 +62,7 @@ class CreditControlAnswer(DiameterAnswer):
                     "online": OnlineAVP,
                     "offline": OfflineAVP,
                     "qos_information": QosInformationAVP,
-                    # "revalidation_time": RevalidationTimeAVP,
+                    "revalidation_time": RevalidationTimeAVP,
                     "default_eps_bearer_qos": DefaultEpsBearerQosAVP,
                     # "default_qos_information": DefaultQosInformationAVP,
                     "bearer_usage": BearerUsageAVP,

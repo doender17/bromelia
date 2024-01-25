@@ -888,3 +888,19 @@ class UsageMonitoringInformationAVP(DiameterAVP, GroupedType):
                              UsageMonitoringInformationAVP.vendor_id)
         DiameterAVP.set_vendor_id_bit(self, True)
         GroupedType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)
+
+class RevalidationTimeAVP(DiameterAVP, TimeType):
+    """Implementation of Revalidation-Time AVP in Section 5.3.41 of
+    ETSI TS 129 212 V17.2.0 (2022-05).
+
+    The Revalidation-Time AVP (AVP Code 1042) is of type Time.
+    """
+    code = REVALIDATION_TIME_AVP_CODE
+    vendor_id = VENDOR_ID_3GPP
+
+    def __init__(self, data):
+        DiameterAVP.__init__(self,
+                             RevalidationTimeAVP.code,
+                             RevalidationTimeAVP.vendor_id)
+        DiameterAVP.set_vendor_id_bit(self, True)
+        TimeType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)
