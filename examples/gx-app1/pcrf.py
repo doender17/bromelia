@@ -56,7 +56,6 @@ def ccr(request):
         "revalidation_time" : datetime.datetime.utcnow() + datetime.timedelta(minutes=30),
         "bearer_usage" : BEARER_USAGE_GENERAL,
         "bearer_control_mode" : BEARER_CONTROL_MODE_UE_NW,
-
     }
     cca = CCA(**attrs)
     cca.append(EventTriggerAVP(EVENT_TRIGGER_QOS_CHANGE))
@@ -65,7 +64,8 @@ def ccr(request):
     cca.append(EventTriggerAVP(EVENT_TRIGGER_USAGE_REPORT))
     cca.append(SupportedFeaturesAVP([ VendorIdAVP(VENDOR_ID_3GPP), FeatureListIdAVP(1), FeatureListAVP(8)]))
     cca.append(SupportedFeaturesAVP([ VendorIdAVP(VENDOR_ID_3GPP), FeatureListIdAVP(1), FeatureListAVP(0)]))
-
+    cca.update_avp("cc_request_number_avp", request.cc_request_number_avp.data)
+    cca.update_avp("cc_request_type_avp", request.cc_request_type_avp.data)
     return cca
 
 
