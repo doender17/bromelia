@@ -29,3 +29,4 @@ messages
 
 # macOS internal
 *.DS_Store
+.idea

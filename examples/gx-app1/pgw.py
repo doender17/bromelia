@@ -56,6 +56,4 @@ if __name__ == "__main__":
     ccr = CCR(**attrs)
     ccr.append(SubscriptionIdAVP([subscriptionIMSIIdType, subscriptionIMSIIdData]))
     ccr.append(SubscriptionIdAVP([subscriptionMSISDNIdType, subscriptionMSISDNIdData]))
-
-
     cca = app.send_message(ccr)

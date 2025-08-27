@@ -50,6 +50,5 @@ def ccr(request):
 
     return CCA(**attrs)
 
-
 if __name__ == "__main__":
     app.run()  #: It will be blocked until connection has been established

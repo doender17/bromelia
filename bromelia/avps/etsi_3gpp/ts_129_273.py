@@ -160,3 +160,33 @@ class AnTrustedAVP(DiameterAVP, EnumeratedType):
         DiameterAVP.set_mandatory_bit(self, True)
         DiameterAVP.set_vendor_id_bit(self, True)
         EnumeratedType.__init__(self, data=data, vendor_id=VENDOR_ID_3GPP)
+
+class OriginationTimeStampAVP(DiameterAVP, Unsigned64Type):
+    """Implementation of Origination-Time-Stamp AVP in Section 9.2.3.2.6 of
+    ETSI TS 129 273 V14.6.0 (2023-04).
+
+    The Origination-Time-Stamp AVP (AVP Code 1536) is of type Unsigned64.
+    """
+    code = ORIGINATION_TIME_STAMP_AVP_CODE
+    vendor_id = VENDOR_ID_3GPP
+
+    def __init__(self, data):
+        DiameterAVP.__init__(self, OriginationTimeStampAVP.code, OriginationTimeStampAVP.vendor_id)
+        DiameterAVP.set_mandatory_bit(self, True)
+        DiameterAVP.set_vendor_id_bit(self, True)
+        Unsigned64Type.__init__(self, data=data)
+
+class MaximumWaitTimeAVP(DiameterAVP, Unsigned32Type):
+    """Implementation of Maximum-Wait-Time AVP in Section 9.2.3.2.7 of
+    ETSI TS 129 273 V14.6.0 (2023-04).
+
+    The Origination-Time-Stamp AVP (AVP Code 1537) is of type Unsigned64.
+    """
+    code = MAXIMUM_WAIT_TIME_AVP_CODE
+    vendor_id = VENDOR_ID_3GPP
+
+    def __init__(self, data):
+        DiameterAVP.__init__(self, MaximumWaitTimeAVP.code, OriginationTimeStampAVP.vendor_id)
+        DiameterAVP.set_mandatory_bit(self, True)
+        DiameterAVP.set_vendor_id_bit(self, True)
+        Unsigned32Type.__init__(self, data=data)
