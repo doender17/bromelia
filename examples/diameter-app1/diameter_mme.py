@@ -41,11 +41,11 @@ config = {
             "LOCAL_NODE_HOSTNAME": LOCAL_HOSTNAME,
             "LOCAL_NODE_REALM": LOCAL_REALM,
             "LOCAL_NODE_IP_ADDRESS": "127.0.0.1",
-            "LOCAL_NODE_PORT": 3868,
+            "LOCAL_NODE_PORT": 3870,
             "PEER_NODE_HOSTNAME": REMOTE_HOSTNAME,
             "PEER_NODE_REALM": REMOTE_REALM,
             "PEER_NODE_IP_ADDRESS": "127.0.0.1",
-            "PEER_NODE_PORT": 3870,
+            "PEER_NODE_PORT": 3868,
             "WATCHDOG_TIMEOUT": 30
 }
 
