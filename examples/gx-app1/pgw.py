@@ -44,7 +44,7 @@ CCR = app.gx.CCR  #: Creating CCR alias
 if __name__ == "__main__":
     app.run()   #: It will be blocked until connection has been established
 
-    subscriptionMSISDNIdData = SubscriptionIdDataAVP("4915775405009")
+    subscriptionMSISDNIdData = SubscriptionIdDataAVP("49157700000001")
     subscriptionMSISDNIdType = SubscriptionIdTypeAVP(END_USER_E164)
     subscriptionIMSIIdData = SubscriptionIdDataAVP("262200000000001")
     subscriptionIMSIIdType = SubscriptionIdTypeAVP(END_USER_E164)
